@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="h-full">
     <navbar />
     <router-view class="ml-72" />
   </div>
