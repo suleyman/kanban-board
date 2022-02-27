@@ -24,16 +24,31 @@
       </div>
       <h1 class="text-3xl font-bold mt-16">Project Name</h1>
     </div>
-    <board />
+    <board :issues="issues" />
   </div>
 </template>
 
 <script lang="ts">
 import Board from "@/components/Project/Board.vue";
-import { defineComponent } from "vue";
+import { defineComponent, onMounted, ref } from "vue";
+import { IIssue } from "@/interfaces/issue";
+import { getIssues } from "@/services/issue";
 
 export default defineComponent({
   name: "Project",
-  components: { Board }
+  components: { Board },
+  setup() {
+    const issues = ref<IIssue[]>([]);
+
+    onMounted(() => {
+      getIssues().then(response => {
+        issues.value = response.data;
+      });
+    });
+
+    return {
+      issues
+    };
+  }
 });
 </script>
