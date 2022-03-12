@@ -1,71 +1,48 @@
 <template>
   <div class="flex-1 bg-gray-200 px-4 py-6 mt-8 grid grid-cols-4 gap-4">
-    <div>
-      OPEN
-      <template v-for="issue in openIssues">
-        <issue />
-      </template>
-    </div>
-    <div>
-      IN PROGRESS
-      <template v-for="issue in inProgressIssues">
-        <issue />
-      </template>
-    </div>
-    <div>
-      TEST
-      <template v-for="issue in testIssues">
-        <issue />
-      </template>
-    </div>
-    <div>
-      DONE
-      <template v-for="issue in doneIssues">
-        <issue />
-      </template>
+    <div
+      v-for="column in columns"
+      :key="column.title"
+      class="bg-gray-100 rounded-lg px-3 py-3 column-width rounded mr-4"
+    >
+      <p class="text-gray-700 font-semibold font-sans tracking-wide text-sm">{{ column.title }}</p>
+      <draggable v-model="column.issues" :animation="200" ghost-class="ghost-card" group="issues">
+        <template #item="{ element, index }">
+          <issue
+            :issue="element"
+            class="mt-3 cursor-move"
+          ></issue>
+        </template>
+      </draggable>
     </div>
   </div>
 </template>
 
 <script lang="ts">
+import Draggable from "vuedraggable";
 import Issue from "@/components/Project/Issue.vue";
-import { computed, defineComponent, PropType } from "vue";
-import { IIssue } from "@/interfaces/issue";
-import { IssueStatus } from "@/enums/issue";
+import { defineComponent, onMounted, ref } from "vue";
+import { getProject } from "@/services/project";
+import { IColumn } from "@/interfaces/project";
 
 export default defineComponent({
   name: "Board",
   components: {
+    Draggable,
     Issue
   },
-  props: {
-    issues: {
-      type: Array as PropType<IIssue[]>,
-      required: true
-    }
-  },
   setup(props) {
-    const openIssues = computed(() => {
-      return props.issues.filter(issue => issue.status === IssueStatus.OPEN);
+    const columns = ref<IColumn[]>();
+
+    onMounted(() => {
+      getProject().then(response => {
+        columns.value = response.data.columns;
+      });
     });
 
-    const inProgressIssues = computed(() => {
-      return props.issues.filter(issue => issue.status === IssueStatus.IN_PROGRESS);
-    });
-
-    const testIssues = computed(() => {
-      return props.issues.filter(issue => issue.status === IssueStatus.TEST);
-    });
-
-    const doneIssues = computed(() => {
-      return props.issues.filter(issue => issue.status === IssueStatus.DONE);
-    });
 
     return {
-      openIssues,
-      inProgressIssues,
-      testIssues,
-      doneIssues
+      columns
     };
   }
 });
