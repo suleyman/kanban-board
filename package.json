@@ -15,6 +15,8 @@
     "vuedraggable": "^4.1.0"
   },
   "devDependencies": {
+    "@types/node": "^17.0.25",
+    "@types/svgo": "^2.6.3",
     "@vitejs/plugin-vue": "^2.2.0",
     "autoprefixer": "^10.4.2",
     "postcss": "^8.4.6",
