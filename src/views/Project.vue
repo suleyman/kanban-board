@@ -22,7 +22,7 @@
           <button type="button" class="bg-blue-800 text-white rounded-lg w-14">+</button>
         </div>
       </div>
-      <h1 class="text-3xl font-bold mt-16">Project Name</h1>
+      <h1 class="text-3xl font-bold mt-6">Project Name</h1>
     </div>
     <board />
   </div>
@@ -30,13 +30,10 @@
 
 <script lang="ts">
 import Board from "@/components/Project/Board.vue";
-import { defineComponent, onMounted, ref } from "vue";
-import { IIssue } from "@/interfaces/issue";
+import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "Project",
-  components: { Board },
-  setup() {
-  }
+  components: { Board }
 });
 </script>

@@ -2,13 +2,13 @@
   "name": "Test",
   "columns": [
     {
-      "title": "Backlog",
+      "title": "Open",
       "issues": [
         {
           "id": 1,
           "title": "Add discount code to checkout page",
           "date": "Sep 14",
-          "type": "Feature Request"
+          "type": "task"
         },
         {
           "id": 2,
@@ -19,19 +19,19 @@
           "id": 3,
           "title": "Design shopping cart dropdown",
           "date": "Sep 9",
-          "type": "Design"
+          "type": "bug"
         },
         {
           "id": 4,
           "title": "Add discount code to checkout page",
           "date": "Sep 14",
-          "type": "Feature Request"
+          "type": "task"
         },
         {
           "id": 5,
           "title": "Test checkout flow",
           "date": "Sep 15",
-          "type": "QA"
+          "type": "story"
         }
       ]
     },
@@ -40,26 +40,26 @@
       "issues": [
         {
           "id": 6,
-          "title": "Design shopping cart dropdown",
+          "title": "bug shopping cart dropdown",
           "date": "Sep 9",
-          "type": "Design"
+          "type": "bug"
         },
         {
           "id": 7,
           "title": "Add discount code to checkout page",
           "date": "Sep 14",
-          "type": "Feature Request"
+          "type": "task"
         },
         {
           "id": 8,
           "title": "Prove documentation on integrations",
           "date": "Sep 12",
-          "type": "Backend"
+          "type": "story"
         }
       ]
     },
     {
-      "title": "Review",
+      "title": "Test",
       "issues": [
         {
           "id": 9,
@@ -68,27 +68,27 @@
         },
         {
           "id": 10,
-          "title": "Design shopping cart dropdown",
+          "title": "bug shopping cart dropdown",
           "date": "Sep 9",
-          "type": "Design"
+          "type": "bug"
         },
         {
           "id": 11,
           "title": "Add discount code to checkout page",
           "date": "Sep 14",
-          "type": "Feature Request"
+          "type": "task"
         },
         {
           "id": 12,
-          "title": "Design shopping cart dropdown",
+          "title": "bug shopping cart dropdown",
           "date": "Sep 9",
-          "type": "Design"
+          "type": "bug"
         },
         {
           "id": 13,
           "title": "Add discount code to checkout page",
           "date": "Sep 14",
-          "type": "Feature Request"
+          "type": "task"
         }
       ]
     },
@@ -99,19 +99,19 @@
           "id": 14,
           "title": "Add discount code to checkout page",
           "date": "Sep 14",
-          "type": "Feature Request"
+          "type": "task"
         },
         {
           "id": 15,
-          "title": "Design shopping cart dropdown",
+          "title": "bug shopping cart dropdown",
           "date": "Sep 9",
-          "type": "Design"
+          "type": "bug"
         },
         {
           "id": 16,
           "title": "Add discount code to checkout page",
           "date": "Sep 14",
-          "type": "Feature Request"
+          "type": "task"
         }
       ]
     }
