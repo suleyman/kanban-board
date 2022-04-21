@@ -3,6 +3,10 @@ import Project from "@/views/Project.vue";
 
 const routes: RouteRecordRaw[] = [
   {
+    path: "/",
+    redirect: "/project"
+  },
+  {
     path: "/project",
     name: "Project",
     component: Project
